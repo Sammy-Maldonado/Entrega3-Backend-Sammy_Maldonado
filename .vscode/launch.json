@@ -1,0 +1,31 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\src\\app.js",
+      "restart": true,
+      "runtimeExecutable": "nodemon",
+      //Si no quiero usar un archivo ".env", elimino el apartado siguiente:
+      "env": {
+        "PORT": "8080",
+        "PERSISTENCE": "MONGO",
+        "MONGO_URL": "mongodb+srv://CoderUser:123@cluster0.gfqujcv.mongodb.net/ecommerce?retryWrites=true&w=majority",
+        "ADMIN_EMAIL": "adminCoder@coder.com",
+        "ADMIN_PWD": "adminCod3r123",
+        "JWT_SECRET": "jwtSecret",
+        "CLIENTID": "Iv1.91be627b8795a242",
+        "CLIENTSECRET": "7668c55a865f8a4a71f973d6d961d2a952f2f951",
+        "CALLBACKURL": "http://localhost:8080/api/sessions/githubcallback"
+      }
+    }
+  ]
+}

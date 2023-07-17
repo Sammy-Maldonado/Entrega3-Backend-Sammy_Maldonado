@@ -1,0 +1,12 @@
+<h1>Detalles del Producto</h1>
+
+{{#if product}}
+<h2>{{product.title}}</h2>
+<p>Descripción: {{product.description}}</p>
+<p>Precio: ${{product.price}}</p>
+<p>Stock: {{product.stock}}</p>
+<p>Categoría: {{product.category}}</p>
+<p>Código: {{product.code}}</p>
+<!-- Agregar botón para agregar al carrito -->
+<a href="{{req.baseUrl}}/carts/{{cartId}}/products/{{product._id}}"><button>Agregar al Carrito</button></a>
+{{/if}}

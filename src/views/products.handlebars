@@ -1,0 +1,28 @@
+<div>
+    <h1>Hola, {{user.name}}</h1>
+    <p>Correo: {{user.email}}</p>
+    <a href="/profile"><button>Ir a Perfil</button></a>
+</div>
+
+<h2>Productos</h2>
+
+{{#each products}}
+<h2>{{this.title}}</h2>
+<p>Descripción: {{this.description}}</p>
+<p>Precio: ${{this.price}}</p>
+<p>Stock: {{this.stock}}</p>
+<p>Categoría: {{this.category}}</p>
+<p>Código: {{this.code}}</p>
+<a href="{{req.baseUrl}}/products/{{this._id}}"><button>Ver Detalles</button></a>
+<br>
+<br>
+{{/each}}
+{{#if hasPrevPage}}
+<a href="{{req.baseUrl}}/products/?page={{prevPage}}"><button>Anterior</button></a>
+{{/if}}
+
+{{page}}
+
+{{#if hasNextPage}}
+<a href="{{req.baseUrl}}/products/?page={{nextPage}}"><button>Siguiente</button></a>
+{{/if}}

@@ -1,0 +1,45 @@
+[
+	{
+		"products": [
+			{
+				"name": "salsa",
+				"price": "500"
+			},
+			{
+				"name": "pescado",
+				"price": 900
+			},
+			{
+				"product": 10,
+				"quantity": 1
+			}
+		],
+		"id": 1
+	},
+	{
+		"products": [
+			{
+				"name": "papas con queso",
+				"price": "15800"
+			},
+			{
+				"name": "chorizo la crianza",
+				"price": "185008"
+			}
+		],
+		"id": 2
+	},
+	{
+		"products": [
+			{
+				"name": "Productos Sammy",
+				"price": "15800"
+			},
+			{
+				"name": "Mis mejores productos",
+				"price": "185008"
+			}
+		],
+		"id": 3
+	}
+]
