@@ -34,7 +34,7 @@ const addOrder = async (req, res) => {
   const totalPrice = actualProducts.reduce((accumulator, previous) => {
     return accumulator += previous.price
   }, 0);
-  const orderNumber = Date.now() * Math.floor(Math.random() * 10000 + 1);
+  const orderNumber = Math.floor(Math.random() * 99999999);
   const orderDTO = new OrdersDTO.CreateOrderDTO(orderNumber, cart, user, actualProducts, totalPrice);
   const newOrder = {...orderDTO}
   const orderResult = await ordersServices.createOrder(newOrder);
