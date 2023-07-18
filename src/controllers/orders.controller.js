@@ -1,4 +1,5 @@
 import { cartsService, ordersServices, productsService, usersService } from "../services/index.js";
+import OrdersDTO from "../dtos/order/OrdersDTO.js";
 
 const getOrders = async (req, res) => {
   const orders = await ordersServices.getAllOrders();
@@ -34,18 +35,9 @@ const addOrder = async (req, res) => {
     return accumulator += previous.price
   }, 0);
   const orderNumber = Date.now() * Math.floor(Math.random() * 10000 + 1);
-  const order = { //Poner DTO
-    number: orderNumber,
-    cart,
-    user,
-    status: "pending",
-    products: actualProducts.map(product => ({
-      title: product.title,
-      price: product.price
-    })),
-    totalPrice
-  }
-  const orderResult = await ordersServices.createOrder(order);
+  const orderDTO = new OrdersDTO.CreateOrderDTO(orderNumber, cart, user, actualProducts, totalPrice);
+  const newOrder = {...orderDTO}
+  const orderResult = await ordersServices.createOrder(newOrder);
   resultUser.orders.push(orderResult._id);
   await usersService.updateUser(user, { orders: resultUser.orders });
   res.send({ status: "success", payload: orderResult });

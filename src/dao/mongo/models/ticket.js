@@ -19,6 +19,6 @@ const schema = new mongoose.Schema({
     purchaser: String,
   }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } })
 
-const userModel = mongoose.model(collection, schema);
+const tiketModel = mongoose.model(collection, schema);
 
-export default userModel;
+export default tiketModel;

@@ -7,7 +7,6 @@ class RegisterUserDTO {
       this.age = user.age,
       this.role = user.role,
       this.password = hashedPassword
-
   }
 }
 

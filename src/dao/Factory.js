@@ -14,6 +14,7 @@ export default class PersistenceFactory {
     let productsDAO;
     let usersDAO;
     let ordersDAO;
+    let ticketsDAO;
     switch (config.PERSISTENCE) {
       case "MONGO":
         //Importo el archivo SOLO cuando lo necesite.
@@ -23,11 +24,13 @@ export default class PersistenceFactory {
         const { default: ProductsManager } = await import('./mongo/Managers/ProductsManager.js');
         const { default: UsersManager } = await import('./mongo/Managers/UsersManager.js');
         const { default: OrdersManager } = await import('./mongo/Managers/OrdersManager.js');
+        const { default: TicketsManager } = await import('./mongo/Managers/TicketsManager.js');
         cartsDAO = new CartsManager();
         messagesDAO = new MessagesManager();
         productsDAO = new ProductsManager();
         usersDAO = new UsersManager();
         ordersDAO = new OrdersManager();
+        ticketsDAO = new TicketsManager();
         break;
 
       case "FS":
@@ -42,7 +45,8 @@ export default class PersistenceFactory {
       messagesDAO,
       productsDAO,
       usersDAO,
-      ordersDAO
+      ordersDAO,
+      ticketsDAO
     };
   }
 }

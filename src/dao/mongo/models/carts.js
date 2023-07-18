@@ -5,7 +5,7 @@ const cartsCollection = "carts";
 /* Schema Mongo Avanzado 1*/
 const cartProductSchema = new mongoose.Schema({
   name: String,
-  price: Number,
+  email: String,
   product: String,
   products: {
     type: [
